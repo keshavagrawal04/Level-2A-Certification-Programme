@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style.css File -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Box-icons Cdn  -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Bootstrap Css Cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Career Development and Skill Assessment Form</title>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container mt-3">
+
+        <div class="row m-1 p-2 border border-3 rounded mb-2" style="border: 2px solid #fff;color: #fff;">
+            <div class="col-12">
+                <h2 class="text-center">Career Development and Skill Assessment Form</h2>
+            </div>
+        </div>
+
+        <!-- Theme Selection Container -->
+        <div class="row d-flex justify-content-center m-1 py-1 rounded">
+            <div class="col-12 flex-wrap gap-2 border border-2 rounded p-2 d-flex justify-content-center">
+                <span class="color-buttons background-color-buttons" data-color="#333"
+                    style="background-color: #333;"><i class="bx bx-check fs-2" style="color: #fff;"></i></span>
+                <span class="color-buttons background-color-buttons" data-color="#ff9d00"
+                    style="background-color: #ff9d00;"></span>
+                <span class="color-buttons background-color-buttons" data-color="#27ae60"
+                    style="background-color: #27ae60;"></span>
+                <span class="color-buttons background-color-buttons" data-color="#b10ae9"
+                    style="background-color: #b10ae9;"></span>
+                <span class="color-buttons background-color-buttons" data-color="#2980b9"
+                    style="background-color: #2980b9;"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="#ff4d00"
+                    style="background-color: #ff4d00;"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="#8e44ad"
+                    style="background-color: #8e44ad;"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="#538083"
+                    style="background-color: #538083;"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="#2A7F62"
+                    style="background-color: #2A7F62;"></span>
+            </div>
+        </div>
+        <!-- Theme Selection Container -->
+
+        <div class="row py-1 mt-4">
+            <!-- Accordion -->
+            <div class="accordion" id="personalInfoAccordion">
+                <!-- Accordion Item (Personal Information) -->
+                <div class="accordion-item theme">
+                    <h2 class="accordion-header fs-2">
+                        <button id="personal-info-btn" class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePersonalInfo" aria-expanded="true"
+                            aria-controls="collapsePersonalInfo">
+                            <i id="icon" class='bx bxs-user bx-tada px-2 fs-3'></i>
+                            <span class="fs-6">Personal Information</span>
+                            <i id="personal-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
+                                style='color:#00ff13'></i>
+                        </button>
+                    </h2>
+                    <div id="collapsePersonalInfo" class="accordion-collapse collapse show"
+                        data-bs-parent="#personalInfoAccordion">
+                        <div class="accordion-body">
+                            <form class="row g-1 d-flex justify-content-center" id="personal-info" autocomplete="off">
+                                <div class="form-floating col-md-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="first name" id="firstName"
+                                        placeholder="">
+                                    <label for="firstName">First Name</label>
+                                </div>
+                                <div class="form-floating col-md-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="last name" id="lastName"
+                                        placeholder="">
+                                    <label for="lastName">Last Name</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="email" class="form-control field" name="email" id="email"
+                                        placeholder="">
+                                    <label for="email">Email Address</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="number" class="form-control field" name="phone number" id="phoneNumber"
+                                        placeholder="">
+                                    <label for="phoneNumber">Phone Number</label>
+                                </div>
+                                <div class="form-floating col-md-3 mb-3 fs-6">
+                                    <input type="date" class="form-control field" name="date of birth" id="dateOfBirth"
+                                        placeholder="">
+                                    <label for="dateOfBirth">Date Of Birth</label>
+                                </div>
+                                <div class="form-floating col-lg-3 col-md-3 fs-6 mb-3">
+                                    <select class="form-select field" name="gender" id="gender"
+                                        aria-label="Floating label select example">
+                                        <option value="select" selected>Select</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <label for="gender">Gender</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="address" id="address"
+                                        placeholder="">
+                                    <label for="address">Address</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="city" id="city" placeholder="">
+                                    <label for="city">City</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="state" id="state"
+                                        placeholder="">
+                                    <label for="state">State</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="number" class="form-control field" name="zip code" id="zipCode"
+                                        placeholder="">
+                                    <label for="zipCode">Zip Code</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="password" class="form-control field" name="password" autocomplete="off"
+                                        id="password" placeholder="">
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="form-floating col-lg-3 col-md-3 fs-6 mb-3">
+                                    <select class="form-select field" name="marital status" id="maritalStatus"
+                                        aria-label="Floating label select example">
+                                        <option value="select" selected>Select</option>
+                                        <option value="male">Married</option>
+                                        <option value="female">UnMarried</option>
+                                    </select>
+                                    <label for="maritalStatus">Marital Status</label>
+                                </div>
+                                <div class="form-floating col-md-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="nationality" autocomplete="off"
+                                        id="nationality" placeholder="">
+                                    <label for="nationality">Nationality</label>
+                                </div>
+                                <div class="col-lg-12 d-flex justify-content-center gap-3">
+                                    <button data-container="personal-info" class="btn save-btn"
+                                        type="submit">Save</button>
+                                    <button data-container="personal-info" class="btn reset-btn"
+                                        type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item (Personal Information) -->
+
+                <!-- Accordion Item (Educational Information) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header fs-2">
+                        <button id="educational-info-btn" class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseEducationalInfo" aria-expanded="true"
+                            aria-controls="collapseEducationalInfo">
+                            <i id="icon" class='bx bxs-graduation bx-tada px-2 fs-3'></i>
+                            <span class="fs-6">Educational Information</span>
+                            <i id="educational-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
+                                style='color:#00ff13'></i>
+                        </button>
+                    </h2>
+                    <div id="collapseEducationalInfo" class="accordion-collapse collapse show"
+                        data-bs-parent="#educationalInfoAccordion">
+                        <div class="accordion-body">
+                            <form class="row g-1 d-flex justify-content-center" id="educational-info"
+                                autocomplete="off">
+                                <div class="form-floating col-lg-3 col-md-6 mb-3 fs-6">
+                                    <select class="form-select field" name="education level" id="educationLevel"
+                                        aria-label="Floating label select example">
+                                        <option value="select">Select</option>
+                                        <option value="10th">High School</option>
+                                        <option value="12th">Higher Secondary</option>
+                                        <option value="underGraduate">Under Graduate</option>
+                                        <option value="postGraduate">Post Graduate</option>
+                                        <option value="diploma">Diploma</option>
+                                    </select>
+                                    <label for="educationLevel">Highest Level of Education</label>
+                                </div>
+                                <div class="form-floating col-lg-3 col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="degree" id="degree"
+                                        placeholder="">
+                                    <label for="degree">Degree Obtained</label>
+                                </div>
+                                <div class="form-floating col-lg-4 col-md-8 col-lg-2 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="institution" id="institution"
+                                        placeholder="">
+                                    <label for="institution">University/Institution</label>
+                                </div>
+                                <div class="form-floating col-lg-2 col-md-4 col-lg-2 mb-3 fs-6">
+                                    <input type="date" class="form-control field" name="completion year"
+                                        id="completionYear" placeholder="">
+                                    <label for="completionYear">Completion Year</label>
+                                </div>
+                                <div class="form-floating col-lg-2 col-md-3 col-lg-1 mb-3 fs-6">
+                                    <input type="number" class="form-control field" name="gpa" id="gpa" placeholder="">
+                                    <label for="gpa">GPA</label>
+                                </div>
+                                <div class="form-floating col-lg-3 col-md-5 col-lg-1 mb-3 fs-6">
+                                    <input type="file" class="form-control field" name="certification"
+                                        id="certification" placeholder="">
+                                    <label for="certification">Professional Certifications</label>
+                                </div>
+                                <div class="form-floating col-lg-2 col-md-4 col-lg-1 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="language" id="language"
+                                        placeholder="">
+                                    <label for="language">Language</label>
+                                </div>
+                                <div class="col-lg-12 d-flex justify-content-center gap-3">
+                                    <button data-container="educational-info" class="btn save-btn"
+                                        type="submit">Save</button>
+                                    <button data-container="educational-info" class="btn reset-btn"
+                                        type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item (Educational Information) -->
+
+                <!-- Accordion Item (Career Goals and Objectives) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header fs-2">
+                        <button id="career-goals-btn" class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCareerGoals" aria-expanded="true"
+                            aria-controls="collapseCareerGoals">
+                            <i id="icon" class='bx bx-target-lock bx-tada px-2 fs-3'></i>
+                            <span class="fs-6">Career Goals and Objectives</span>
+                            <i id="career-goals-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
+                                style='color:#00ff13'></i>
+                        </button>
+                    </h2>
+                    <div id="collapseCareerGoals" class="accordion-collapse collapse show"
+                        data-bs-parent="#collapseCareerGoals">
+                        <div class="accordion-body">
+                            <form class="row g-1 d-flex justify-content-center" id="career-goals" autocomplete="off">
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="short term goal"
+                                        id="shortTermGoal" placeholder="">
+                                    <label for="shortTermGoal">Career Goals (Short Term)</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="long term goal"
+                                        id="longTermGoal" placeholder="">
+                                    <label for="longTermGoal">Career Goals (Long Term)</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="preferred job" id="preferredJob"
+                                        placeholder="">
+                                    <label for="preferredJob">Preferred Job Roles/Positions</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="desired industry"
+                                        id="desiredIndustry" placeholder="">
+                                    <label for="desiredIndustry">Desired Industry/Field
+                                    </label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="target company"
+                                        id="targetCompany" placeholder="">
+                                    <label for="targetCompany">Target Companies/Organizations
+                                    </label>
+                                </div>
+                                <div class="col-lg-12 d-flex justify-content-center gap-3">
+                                    <button data-container="career-goals" class="btn save-btn"
+                                        type="submit">Save</button>
+                                    <button data-container="career-goals" class="btn reset-btn"
+                                        type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item (Career Goals and Objectives) -->
+
+                <!-- Accordion Item (Employment History) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header fs-2">
+                        <button id="employment-history-btn" class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseEmploymentHistory" aria-expanded="true"
+                            aria-controls="collapseEmploymentHistory">
+                            <i id="icon" class='bx bxs-briefcase bx-tada px-2 fs-3'></i>
+                            <span class="fs-6">Employment History</span>
+                            <i id="employment-history-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
+                                style='color:#00ff13'></i>
+                        </button>
+                    </h2>
+                    <div id="collapseEmploymentHistory" class="accordion-collapse collapse show"
+                        data-bs-parent="#collapseEmploymentHistory">
+                        <div class="accordion-body">
+                            <form class="row g-1 d-flex justify-content-center" id="employment-history"
+                                autocomplete="off">
+                                <div class="form-floating col-md-4 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="job title" id="jobTitle"
+                                        placeholder="">
+                                    <label for="jobTitle">Current Job Title</label>
+                                </div>
+                                <div class="form-floating col-md-4 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="company" id="company"
+                                        placeholder="">
+                                    <label for="company">Current Company</label>
+                                </div>
+                                <div class="form-floating col-md-4 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="industry" id="industry"
+                                        placeholder="">
+                                    <label for="industry">Industry</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="job responsibilities"
+                                        id="jobResponsibilities" placeholder="">
+                                    <label for="job responsibilities">Job Responsibilities</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="number" class="form-control field" name="experience" id="experience"
+                                        placeholder="">
+                                    <label for="experience">Year Of Work Experience</label>
+                                </div>
+                                <div class="col-lg-12 d-flex justify-content-center gap-3">
+                                    <button data-container="employment-history" class="btn save-btn"
+                                        type="submit">Save</button>
+                                    <button data-container="employment-history" class="btn reset-btn"
+                                        type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item (Career Development) -->
+
+                <!-- Accordion Item (Skills and Abilities) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header fs-2">
+                        <button id="skills-info-btn" class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#skillsInfo" aria-expanded="true" aria-controls="skillsInfo">
+                            <i id="icon" class='bx bxs-bar-chart-alt-2 bx-tada px-2 fs-3'></i>
+                            <span class="fs-6">Skills and Abilities</span>
+                            <i id="skills-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
+                                style='color:#00ff13'></i>
+                        </button>
+                    </h2>
+                    <div id="skillsInfo" class="accordion-collapse collapse show" data-bs-parent="#skillsInfo">
+                        <div class="accordion-body">
+                            <form class="row g-1 d-flex justify-content-center" id="skills-info" autocomplete="off">
+                                <div class="form-floating col-md-4 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="technical skills"
+                                        autocomplete="off" id="technicalSkills" placeholder="">
+                                    <label for="technicalSkills">Technical Skills
+                                    </label>
+                                </div>
+                                <div class="form-floating col-md-4 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="soft skills" autocomplete="off"
+                                        id="softSkills" placeholder="">
+                                    <label for="softSkills">Soft Skills
+                                    </label>
+                                </div>
+                                <div class="form-floating col-md-4 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="industry specific skills"
+                                        autocomplete="off" id="industrySpecificSkills" placeholder="">
+                                    <label for="industrySpecificSkills">Industry-specific Skills
+                                    </label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="language proficiency"
+                                        autocomplete="off" id="languageProficiency" placeholder="">
+                                    <label for="languageProficiency">Language Proficiency
+                                    </label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="areas of improvement"
+                                        autocomplete="off" id="improvement" placeholder="">
+                                    <label for="improvement">Areas for Improvement
+                                    </label>
+                                </div>
+                                <div class="form-floating col-lg-3 col-md-5 mb-3 fs-6">
+                                    <select class="form-select field" name="skill level" id="skillLevel"
+                                        aria-label="Floating label select example">
+                                        <option value="select">Select</option>
+                                        <option value="10th">Beginner</option>
+                                        <option value="12th">Intermediate</option>
+                                        <option value="underGraduate">Experienced</option>
+                                    </select>
+                                    <label for="skillLevel">Skill Level</label>
+                                </div>
+                                <div class="col-lg-12 d-flex justify-content-center gap-3">
+                                    <button data-container="skills-info" class="btn save-btn"
+                                        type="submit">Save</button>
+                                    <button data-container="skills-info" class="btn reset-btn"
+                                        type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item (Skills and Abilities) -->
+
+                <!-- Accordion Item (Interests and Hobbies) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header fs-2">
+                        <button id="interests-hobbies-btn" class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseInterestsHobbies" aria-expanded="true"
+                            aria-controls="collapseInterestsHobbies">
+                            <i id="icon" class='bx bxs-heart bx-tada px-2 fs-3'></i>
+                            <span class="fs-6">Interests and Hobbies</span>
+                            <i id="interests-hobbies-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
+                                style='color:#00ff13'></i>
+                        </button>
+                    </h2>
+                    <div id="collapseInterestsHobbies" class="accordion-collapse collapse show"
+                        data-bs-parent="#collapseInterestsHobbies">
+                        <div class="accordion-body">
+                            <form class="row g-1 d-flex justify-content-center" id="interests-hobbies"
+                                autocomplete="off">
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="interests hobbies"
+                                        id="interests" placeholder="">
+                                    <label for="interests">Interests/Hobbies</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="extracurricular activities"
+                                        id="extracurricularActivities" placeholder="">
+                                    <label for="extracurricularActivities">Extracurricular Activities</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="volunteer work" id="volunteer"
+                                        placeholder="">
+                                    <label for="volunteer">Volunteer Work</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="creative pursuits"
+                                        id="creativePursuits" placeholder="">
+                                    <label for="creativePursuits">Creative Pursuits</label>
+                                </div>
+                                <div class="col-lg-12 d-flex justify-content-center gap-3">
+                                    <button data-container="interests-hobbies" class="btn save-btn"
+                                        type="submit">Save</button>
+                                    <button data-container="interests-hobbies" class="btn reset-btn"
+                                        type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item (Career Development) -->
+
+                <!-- Accordion Item (Additional Information) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header fs-2">
+                        <button id="additional-info-btn" class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseAdditionalInfo" aria-expanded="true"
+                            aria-controls="collapseAdditionalInfo">
+                            <i id="icon" class='bx bxs-file bx-tada px-2 fs-3'></i>
+                            <span class="fs-6">Additional Information</span>
+                            <i id="additional-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
+                                style='color:#00ff13'></i>
+                        </button>
+                    </h2>
+                    <div id="collapseAdditionalInfo" class="accordion-collapse collapse show"
+                        data-bs-parent="#collapseAdditionalInfo">
+                        <div class="accordion-body">
+                            <form class="row g-1 d-flex justify-content-center" id="additional-info" autocomplete="off">
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="work environment"
+                                        id="workEnvironment" placeholder="">
+                                    <label for="workEnvironment">Preferred Work Environment</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="salary expectations" id="salary"
+                                        placeholder="">
+                                    <label for="salary">Salary Expectations</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="work life balance preferences"
+                                        id="balance" placeholder="">
+                                    <label for="balance">Work-Life Balance Preferences</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="relocation preferences"
+                                        id="relocationPreferences" placeholder="">
+                                    <label for="relocationPreferences">Relocation Preferences</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="references" id="references"
+                                        placeholder="">
+                                    <label for="references">References</label>
+                                </div>
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
+                                    <input type="text" class="form-control field" name="additional comments"
+                                        id="comments" placeholder="">
+                                    <label for="comments">Additional Comments/Notes</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="file" class="form-control field" name="resume" autocomplete="off"
+                                        id="resume" placeholder="">
+                                    <label for="resume">Resume/CV Upload</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="portfolio" autocomplete="off"
+                                        id="protfolio" placeholder="">
+                                    <label for="protfolio">Professional Portfolio URL</label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="linkedIn profile"
+                                        autocomplete="off" id="linkedIn" placeholder="">
+                                    <label for="linkedIn">LinkedIn Profile URL
+                                    </label>
+                                </div>
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <input type="url" class="form-control field" name="github profile"
+                                        autocomplete="off" id="github" placeholder="">
+                                    <label for="github">GitHub Profile URL</label>
+                                </div>
+                                <div class="col-lg-12 d-flex justify-content-center gap-3">
+                                    <button data-container="additional-info" class="btn save-btn"
+                                        type="submit">Save</button>
+                                    <button data-container="additional-info" class="btn reset-btn"
+                                        type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item (Career Development) -->
+            </div>
+            <!-- Accordion -->
+        </div>
+        <div class="row p-2 rounded mx-1 mt-4 mb-5" style="background: #fff;">
+            <div class="col-lg-12 d-flex justify-content-center gap-2">
+                <button id="submit-btn" class="btn w-25" type="submit">Submit</button>
+                <button id="clear-btn" class="btn w-25" type="reset">Clear</button>
+            </div>
+        </div>
+    </div>
+    <!-- Main Container -->
+
+    <!-- Script.js File  -->
+    <script src="./js/script.js"></script>
+    <!-- Bootstrap Js Cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
