@@ -119,6 +119,18 @@ const InputFieldValidation = (input) => {
         case 'date':
             if (input.value.trim() === '') {
                 displayErrorMessage(input, `Please enter your ${input.name}.`);
+            } else if (input.id === 'dateOfBirth') {
+                let currentDate = new Date();
+                let inputDate = new Date(input.value);
+
+                let minDate = new Date(currentDate);
+                minDate.setFullYear(currentDate.getFullYear() - 18);
+
+                if (inputDate >= currentDate || inputDate > minDate) {
+                    displayErrorMessage(input, 'Please enter a valid date of birth within an acceptable range.');
+                } else {
+                    isValid = true;
+                }
             } else {
                 isValid = true;
             }
