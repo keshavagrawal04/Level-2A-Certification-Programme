@@ -62,6 +62,32 @@ const validatePassword = (password) => {
     return true;
 }
 
+// Function To Validate email
+const validateEmail = (email) => {
+    const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+    const symbolsRegex = /[!@#$%^&*(),.?":{}|<>_+=\-[\]\\';`~/]/;
+
+    if (email.value[0].match(symbolsRegex)) {
+        return "Email cannot start with a symbol.";
+    }
+    if (email.value.length > 0 && !email.value.includes("@")) {
+        return "Email must contain the '@' symbol.";
+    }
+    if (email.value.split("@")[1].length < 3 && !symbolsRegex.test(email.value.split('@')[1])) {
+        return "Email must have at least 3 characters after the '@' symbol.";
+    }
+    if (email.value.split("@")[1].length >= 3 && !symbolsRegex.test(email.value.split('@')[1])) {
+        return "Email must contain the '.' symbol after the '@' symbol.";
+    }
+    if (email.value.split(".")[email.value.split(".").length - 1].length < 3) {
+        return "Email must have at least 3 characters after the '.' symbol.";
+    }
+    if (!emailRegex.test(email.value)) {
+        return "Email can only contain '@' and '.' symbols.";
+    }
+    return true;
+}
+
 // Input Field Validation By Type
 const InputFieldValidation = (input) => {
     let isValid = false;
@@ -142,7 +168,7 @@ const InputFieldValidation = (input) => {
                     displayErrorMessage(input, `Please enter more than 2 characters.`);
                 } else if (input.id === 'firstName' || input.id === 'lastName') {
                     if (multipleWordsRegex.test(input.value.trim())) {
-                        displayErrorMessage(input, `Please enter a ${input.name}.`);
+                        displayErrorMessage(input, `Please don't use multiple words.`);
                     } else {
                         isValid = true;
                     }
@@ -152,30 +178,43 @@ const InputFieldValidation = (input) => {
             }
             break;
         case 'email':
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
             if (input.value.trim() === '') {
                 displayErrorMessage(input, 'Please enter your email address.');
-            } else if (!emailPattern.test(input.value.trim())) {
-                displayErrorMessage(input, 'Please enter a valid email address.');
             } else {
-                isValid = true;
+                let isEmailValid = validateEmail(input);
+                console.log(isEmailValid);
+                if (isEmailValid === true) {
+                    isValid = true;
+                } else {
+                    displayErrorMessage(input, isEmailValid);
+                    isValid = false;
+                }
             }
             break;
         case 'number':
             const validationPatterns = {
                 phoneNumber: /^\d{10}$/,
                 zipCode: /^\d{6}(?:-\d{4})?$/,
-                gpa: /^\d\.\d{2}$/
+                percentage: /^(100(\.0{1,2})?|\d{1,2}(\.\d{1,2})?)$/
             };
 
             if (input.value.trim() === '') {
                 displayErrorMessage(input, `Please enter your ${input.name}.`);
-            } else if (input.id === 'phoneNumber' || input.id === 'zipCode' || input.id === 'gpa') {
+            } else if (input.id === 'phoneNumber' || input.id === 'zipCode' || input.id === 'percentage') {
                 let regex = validationPatterns[input.id];
-                (!regex.test(input.value.trim()))
-                    ? displayErrorMessage(input, `Please enter a valid ${input.name}.`)
-                    : isValid = true;
+                if (!regex.test(input.value.trim())) {
+                    if (input.id === 'phoneNumber') {
+                        if (input.value.length < 10) {
+                            displayErrorMessage(input, `Phone number must have 10 digits.`)
+                        } else if (input.value.length > 10) {
+                            displayErrorMessage(input, `Phone number can not have more than 10 digits.`)
+                        }
+                    } else {
+                        displayErrorMessage(input, `Please enter a valid ${input.name}.`)
+                    }
+                } else {
+                    isValid = true;
+                }
             } else {
                 isValid = true;
             }
@@ -191,7 +230,7 @@ const InputFieldValidation = (input) => {
                 minDate.setFullYear(currentDate.getFullYear() - 18);
 
                 if (inputDate >= currentDate || inputDate > minDate) {
-                    displayErrorMessage(input, 'Please enter a valid date of birth within an acceptable range.');
+                    displayErrorMessage(input, 'Date of birth should be at least 18 years ago.');
                 } else {
                     isValid = true;
                 }

@@ -200,7 +200,7 @@
                                 style='color:#00ff13'></i>
                         </button>
                     </h2>
-                    <div id="collapseEducationalInfo" class="accordion-collapse collapse hide"
+                    <div id="collapseEducationalInfo" class="accordion-collapse collapse show"
                         data-bs-parent="#educationalInfoAccordion">
                         <div class="accordion-body">
                             <form class="row g-1 d-flex justify-content-center" data-index="1" id="educational-info"
@@ -233,8 +233,9 @@
                                     <label for="completionYear">Completion Year</label>
                                 </div>
                                 <div class="form-floating col-lg-2 col-md-3 col-lg-1 mb-3 fs-6">
-                                    <input type="number" class="form-control field" name="gpa" id="gpa" placeholder="">
-                                    <label for="gpa">GPA</label>
+                                    <input type="number" class="form-control field" name="percentage" id="percentage"
+                                        placeholder="">
+                                    <label for="percentage">Percentage</label>
                                 </div>
                                 <div class="form-floating col-lg-3 col-md-5 col-lg-1 mb-3 fs-6">
                                     <input type="file" class="form-control field" name="certification"
@@ -358,9 +359,26 @@
                                         placeholder="">
                                     <label for="company">Current Company</label>
                                 </div>
-                                <div class="form-floating col-md-4 col-lg-3 mb-3 fs-6">
-                                    <input type="text" class="form-control field" name="industry" id="industry"
-                                        placeholder="">
+                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                    <select class="form-select field" name="industry" id="industry"
+                                        aria-label="Floating label select example">
+                                        <option value="select">Select</option>
+                                        <option value="technology">Information Technology</option>
+                                        <option value="finance">Finance</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="education">Education</option>
+                                        <option value="consulting">Consulting</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="legalServices">Legal Services</option>
+                                        <option value="marketingAdvertising">Marketing & Advertising</option>
+                                        <option value="realEstate">Real Estate</option>
+                                        <option value="retail">Retail</option>
+                                        <option value="telecommunications">Telecommunications</option>
+                                        <option value="transportation">Transportation</option>
+                                        <option value="hospitality">Hospitality</option>
+                                        <option value="energy">Energy</option>
+                                        <option value="agriculture">Agriculture</option>
+                                    </select>
                                     <label for="industry">Industry</label>
                                 </div>
                                 <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
