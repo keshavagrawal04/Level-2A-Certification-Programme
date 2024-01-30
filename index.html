@@ -18,48 +18,82 @@
     <!-- Main Container -->
     <div class="container mt-3">
 
-        <div class="row m-1 p-2 border border-3 rounded mb-2" style="border: 2px solid #fff;color: #fff;">
+        <!-- Header -->
+        <div class="row p-2" style="color: #fff;">
             <div class="col-12">
-                <h2 class="text-center">Career Development and Skill Assessment Form</h2>
+                <h2 id="heading" class="text-center">Career Development and Skill Assessment Form</h2>
             </div>
         </div>
+        <!-- Header -->
 
         <!-- Theme Selection Container -->
-        <div class="row d-flex justify-content-center m-1 py-1 rounded">
-            <div class="col-12 flex-wrap gap-2 border border-2 rounded p-2 d-flex justify-content-center">
-                <span class="color-buttons background-color-buttons" data-color="#333"
-                    style="background-color: #333;"><i class="bx bx-check fs-2" style="color: #fff;"></i></span>
-                <span class="color-buttons background-color-buttons" data-color="#ff9d00"
-                    style="background-color: #ff9d00;"></span>
-                <span class="color-buttons background-color-buttons" data-color="#27ae60"
-                    style="background-color: #27ae60;"></span>
-                <span class="color-buttons background-color-buttons" data-color="#b10ae9"
-                    style="background-color: #b10ae9;"></span>
-                <span class="color-buttons background-color-buttons" data-color="#2980b9"
-                    style="background-color: #2980b9;"></span>
-                <span class="color-buttons foreground-color-buttons" data-color="#007bffbb"
-                    style="background-color: #007bffbb;"></span>
-                <span class="color-buttons foreground-color-buttons" data-color="#8e44ad"
-                    style="background-color: #8e44ad;"></span>
-                <span class="color-buttons foreground-color-buttons" data-color="#538083"
-                    style="background-color: #538083;"></span>
-                <span class="color-buttons foreground-color-buttons" data-color="#2A7F62"
-                    style="background-color: #2A7F62;"></span>
+        <div class="row d-flex justify-content-center py-1 rounded">
+            <div class="col-12 flex-wrap gap-2 p-2 d-flex justify-content-center">
+                <span class="color-buttons background-color-buttons" data-color="51, 51, 51"
+                    style="background-color: rgb(51, 51, 51);"><i class="bx bx-check fs-2"
+                        style="color: #fff;"></i></span>
+                <span class="color-buttons background-color-buttons" data-color="150, 100, 0"
+                    style="background-color: rgb(150 100 0);"></span>
+                <span class="color-buttons background-color-buttons" data-color="39, 174, 96"
+                    style="background-color: rgb(40, 175, 95);"></span>
+                <span class="color-buttons background-color-buttons" data-color="177, 10, 233"
+                    style="background-color: rgb(175, 10, 235);"></span>
+                <span class="color-buttons background-color-buttons" data-color="41, 128, 185"
+                    style="background-color: rgb(40, 130, 185);"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="120, 226, 75"
+                    style="background-color: rgb(120, 226, 75);"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="142, 68, 173"
+                    style="background-color: rgb(145, 8, 145);"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="83, 128, 131"
+                    style="background-color: rgb(80, 125, 130);"></span>
+                <span class="color-buttons foreground-color-buttons" data-color="45, 130, 100"
+                    style="background-color: rgb(45, 130, 100);"></span>
             </div>
         </div>
         <!-- Theme Selection Container -->
 
-        <div class="row py-1 mt-4">
+        <!-- Theme Selection Container -->
+        <div id="tracking" class="row d-lg-flex d-md-flex d-none justify-content-center py-1 rounded">
+            <div class="col-12 p-2 position-relative d-flex rounded justify-content-around">
+                <span class="progress-track p-4" style="background: #fff;">
+                    <i class='bx bxs-user fs-3'></i>
+                </span>
+                <span class="progress-track p-4" style="background: #fff;">
+                    <i class='bx bxs-graduation fs-3'></i>
+                </span>
+                <span class="progress-track p-4" style="background: #fff;">
+                    <i class='bx bx-target-lock fs-3'></i>
+                </span>
+                <span class="progress-track p-4" style="background: #fff;">
+                    <i class='bx bxs-briefcase fs-3'></i>
+                </span>
+                <span class="progress-track p-4" style="background: #fff;">
+                    <i class='bx bxs-bar-chart-alt-2 fs-3'></i>
+                </span>
+                <span class="progress-track p-4" style="background: #fff;">
+                    <i class='bx bxs-heart fs-3'></i>
+                </span>
+                <span class="progress-track p-4" style="background: #fff;">
+                    <i class='bx bxs-file fs-3'></i>
+                </span>
+                <div class="custom-progress-bar">
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Theme Selection Container -->
+
+        <div class="row py-1 mt-2">
             <!-- Accordion -->
             <div class="accordion" id="personalInfoAccordion">
                 <!-- Accordion Item (Personal Information) -->
                 <div class="accordion-item theme">
                     <h2 class="accordion-header fs-2">
-                        <button id="personal-info-btn" class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapsePersonalInfo" aria-expanded="true"
+                        <button disabled="true" id="personal-info-btn" class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapsePersonalInfo" aria-expanded="true"
                             aria-controls="collapsePersonalInfo">
-                            <i id="icon" class='bx bxs-user bx-tada px-2 fs-3'></i>
-                            <span class="fs-6">Personal Information</span>
+                            <i class='bx bxs-user bx-tada px-2 fs-3 icon'></i>
+                            <span class="title">Personal Information</span>
                             <i id="personal-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
                                 style='color:#00ff13'></i>
                         </button>
@@ -67,7 +101,8 @@
                     <div id="collapsePersonalInfo" class="accordion-collapse collapse show"
                         data-bs-parent="#personalInfoAccordion">
                         <div class="accordion-body">
-                            <form class="row g-1 d-flex justify-content-center" id="personal-info" autocomplete="off">
+                            <form class="row g-1 d-flex justify-content-center" data-index="0" id="personal-info"
+                                autocomplete="off">
                                 <div class="form-floating col-md-3 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="first name" id="firstName"
                                         placeholder="">
@@ -103,31 +138,31 @@
                                     </select>
                                     <label for="gender">Gender</label>
                                 </div>
-                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="address" id="address"
                                         placeholder="">
                                     <label for="address">Address</label>
                                 </div>
-                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="city" id="city" placeholder="">
                                     <label for="city">City</label>
                                 </div>
-                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                <div class="form-floating col-md-6 mb-3 col-lg-3 fs-6">
                                     <input type="text" class="form-control field" name="state" id="state"
                                         placeholder="">
                                     <label for="state">State</label>
                                 </div>
-                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                <div class="form-floating col-md-6 mb-3 col-lg-2 fs-6">
                                     <input type="number" class="form-control field" name="zip code" id="zipCode"
                                         placeholder="">
                                     <label for="zipCode">Zip Code</label>
                                 </div>
-                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                <div class="form-floating col-md-6 mb-3 col-lg-3 fs-6">
                                     <input type="password" class="form-control field" name="password" autocomplete="off"
                                         id="password" placeholder="">
                                     <label for="password">Password</label>
                                 </div>
-                                <div class="form-floating col-lg-3 col-md-3 fs-6 mb-3">
+                                <div class="form-floating col-lg-2 col-md-3 fs-6 mb-3">
                                     <select class="form-select field" name="marital status" id="maritalStatus"
                                         aria-label="Floating label select example">
                                         <option value="select" selected>Select</option>
@@ -136,7 +171,7 @@
                                     </select>
                                     <label for="maritalStatus">Marital Status</label>
                                 </div>
-                                <div class="form-floating col-md-3 mb-3 fs-6">
+                                <div class="form-floating col-md-3 mb-3 col-lg-2 fs-6">
                                     <input type="text" class="form-control field" name="nationality" autocomplete="off"
                                         id="nationality" placeholder="">
                                     <label for="nationality">Nationality</label>
@@ -156,19 +191,19 @@
                 <!-- Accordion Item (Educational Information) -->
                 <div class="accordion-item">
                     <h2 class="accordion-header fs-2">
-                        <button id="educational-info-btn" class="accordion-button" type="button"
+                        <button disabled="true" id="educational-info-btn" class="accordion-button" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseEducationalInfo" aria-expanded="true"
                             aria-controls="collapseEducationalInfo">
-                            <i id="icon" class='bx bxs-graduation bx-tada px-2 fs-3'></i>
-                            <span class="fs-6">Educational Information</span>
+                            <i class='bx bxs-graduation bx-tada icon px-2 fs-3'></i>
+                            <span class="title">Educational Information</span>
                             <i id="educational-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
                                 style='color:#00ff13'></i>
                         </button>
                     </h2>
-                    <div id="collapseEducationalInfo" class="accordion-collapse collapse show"
+                    <div id="collapseEducationalInfo" class="accordion-collapse collapse hide"
                         data-bs-parent="#educationalInfoAccordion">
                         <div class="accordion-body">
-                            <form class="row g-1 d-flex justify-content-center" id="educational-info"
+                            <form class="row g-1 d-flex justify-content-center" data-index="1" id="educational-info"
                                 autocomplete="off">
                                 <div class="form-floating col-lg-3 col-md-6 mb-3 fs-6">
                                     <select class="form-select field" name="education level" id="educationLevel"
@@ -223,22 +258,23 @@
                 </div>
                 <!-- Accordion Item (Educational Information) -->
 
-                <!-- Accordion Item (Career Goals and Objectives) -->
+                <!-- Accordion Item (Career Goals) -->
                 <div class="accordion-item">
                     <h2 class="accordion-header fs-2">
-                        <button id="career-goals-btn" class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseCareerGoals" aria-expanded="true"
+                        <button disabled="true" id="career-goals-btn" class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseCareerGoals" aria-expanded="true"
                             aria-controls="collapseCareerGoals">
-                            <i id="icon" class='bx bx-target-lock bx-tada px-2 fs-3'></i>
-                            <span class="fs-6">Career Goals and Objectives</span>
+                            <i class='bx bx-target-lock bx-tada icon px-2 fs-3'></i>
+                            <span class="title">Career Goals</span>
                             <i id="career-goals-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
                                 style='color:#00ff13'></i>
                         </button>
                     </h2>
-                    <div id="collapseCareerGoals" class="accordion-collapse collapse show"
+                    <div id="collapseCareerGoals" class="accordion-collapse collapse hide"
                         data-bs-parent="#collapseCareerGoals">
                         <div class="accordion-body">
-                            <form class="row g-1 d-flex justify-content-center" id="career-goals" autocomplete="off">
+                            <form class="row g-1 d-flex justify-content-center" data-index="2" id="career-goals"
+                                autocomplete="off">
                                 <div class="form-floating col-md-6 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="short term goal"
                                         id="shortTermGoal" placeholder="">
@@ -254,11 +290,28 @@
                                         placeholder="">
                                     <label for="preferredJob">Preferred Job Roles/Positions</label>
                                 </div>
+
                                 <div class="form-floating col-md-6 mb-3 fs-6">
-                                    <input type="text" class="form-control field" name="desired industry"
-                                        id="desiredIndustry" placeholder="">
-                                    <label for="desiredIndustry">Desired Industry/Field
-                                    </label>
+                                    <select class="form-select field" name="desired industry" id="desiredIndustry"
+                                        aria-label="Floating label select example">
+                                        <option value="select">Select</option>
+                                        <option value="technology">Information Technology</option>
+                                        <option value="finance">Finance</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="education">Education</option>
+                                        <option value="consulting">Consulting</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="legalServices">Legal Services</option>
+                                        <option value="marketingAdvertising">Marketing & Advertising</option>
+                                        <option value="realEstate">Real Estate</option>
+                                        <option value="retail">Retail</option>
+                                        <option value="telecommunications">Telecommunications</option>
+                                        <option value="transportation">Transportation</option>
+                                        <option value="hospitality">Hospitality</option>
+                                        <option value="energy">Energy</option>
+                                        <option value="agriculture">Agriculture</option>
+                                    </select>
+                                    <label for="desiredIndustry">Desired Industry/Field</label>
                                 </div>
                                 <div class="form-floating col-md-6 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="target company"
@@ -276,24 +329,24 @@
                         </div>
                     </div>
                 </div>
-                <!-- Accordion Item (Career Goals and Objectives) -->
+                <!-- Accordion Item (Career Goals) -->
 
                 <!-- Accordion Item (Employment History) -->
                 <div class="accordion-item">
                     <h2 class="accordion-header fs-2">
-                        <button id="employment-history-btn" class="accordion-button" type="button"
+                        <button disabled="true" id="employment-history-btn" class="accordion-button" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseEmploymentHistory" aria-expanded="true"
                             aria-controls="collapseEmploymentHistory">
-                            <i id="icon" class='bx bxs-briefcase bx-tada px-2 fs-3'></i>
-                            <span class="fs-6">Employment History</span>
+                            <i class='bx bxs-briefcase bx-tada icon px-2 fs-3'></i>
+                            <span class="title">Employment History</span>
                             <i id="employment-history-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
                                 style='color:#00ff13'></i>
                         </button>
                     </h2>
-                    <div id="collapseEmploymentHistory" class="accordion-collapse collapse show"
+                    <div id="collapseEmploymentHistory" class="accordion-collapse collapse hide"
                         data-bs-parent="#collapseEmploymentHistory">
                         <div class="accordion-body">
-                            <form class="row g-1 d-flex justify-content-center" id="employment-history"
+                            <form class="row g-1 d-flex justify-content-center" data-index="3" id="employment-history"
                                 autocomplete="off">
                                 <div class="form-floating col-md-4 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="job title" id="jobTitle"
@@ -335,42 +388,48 @@
                 <!-- Accordion Item (Skills and Abilities) -->
                 <div class="accordion-item">
                     <h2 class="accordion-header fs-2">
-                        <button id="skills-info-btn" class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#skillsInfo" aria-expanded="true" aria-controls="skillsInfo">
-                            <i id="icon" class='bx bxs-bar-chart-alt-2 bx-tada px-2 fs-3'></i>
-                            <span class="fs-6">Skills and Abilities</span>
+                        <button disabled="true" id="skills-info-btn" class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#skillsInfo" aria-expanded="true"
+                            aria-controls="skillsInfo">
+                            <i class='bx bxs-bar-chart-alt-2 icon bx-tada px-2 fs-3'></i>
+                            <span class="title">Skills and Abilities</span>
                             <i id="skills-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
                                 style='color:#00ff13'></i>
                         </button>
                     </h2>
-                    <div id="skillsInfo" class="accordion-collapse collapse show" data-bs-parent="#skillsInfo">
+                    <div id="skillsInfo" class="accordion-collapse collapse hide" data-bs-parent="#skillsInfo">
                         <div class="accordion-body">
-                            <form class="row g-1 d-flex justify-content-center" id="skills-info" autocomplete="off">
-                                <div class="form-floating col-md-4 mb-3 fs-6">
+                            <form class="row g-1 d-flex justify-content-center" data-index="4" id="skills-info"
+                                autocomplete="off">
+                                <div class="form-floating col-6 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="technical skills"
                                         autocomplete="off" id="technicalSkills" placeholder="">
                                     <label for="technicalSkills">Technical Skills
                                     </label>
+                                    <button type="button" class="btn mt-2" id="addTechnicalSkillBtn">Add</button>
                                 </div>
-                                <div class="form-floating col-md-4 mb-3 fs-6">
+                                <span id="technicalSkillsList" class="col-6"></span>
+                                <div class="form-floating col-6 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="soft skills" autocomplete="off"
                                         id="softSkills" placeholder="">
                                     <label for="softSkills">Soft Skills
                                     </label>
+                                    <button type="button" class="btn mt-2" id="addSoftSkillBtn">Add</button>
                                 </div>
+                                <span id="softSkillsList" class="col-6"></span>
                                 <div class="form-floating col-md-4 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="industry specific skills"
                                         autocomplete="off" id="industrySpecificSkills" placeholder="">
                                     <label for="industrySpecificSkills">Industry-specific Skills
                                     </label>
                                 </div>
-                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                <div class="form-floating col-md-4 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="language proficiency"
                                         autocomplete="off" id="languageProficiency" placeholder="">
                                     <label for="languageProficiency">Language Proficiency
                                     </label>
                                 </div>
-                                <div class="form-floating col-md-6 mb-3 fs-6">
+                                <div class="form-floating col-md-4 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="areas of improvement"
                                         autocomplete="off" id="improvement" placeholder="">
                                     <label for="improvement">Areas for Improvement
@@ -401,19 +460,19 @@
                 <!-- Accordion Item (Interests and Hobbies) -->
                 <div class="accordion-item">
                     <h2 class="accordion-header fs-2">
-                        <button id="interests-hobbies-btn" class="accordion-button" type="button"
+                        <button disabled="true" id="interests-hobbies-btn" class="accordion-button" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseInterestsHobbies" aria-expanded="true"
                             aria-controls="collapseInterestsHobbies">
-                            <i id="icon" class='bx bxs-heart bx-tada px-2 fs-3'></i>
-                            <span class="fs-6">Interests and Hobbies</span>
+                            <i class='bx bxs-heart bx-tada icon px-2 fs-3'></i>
+                            <span class="title">Interests and Hobbies</span>
                             <i id="interests-hobbies-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
                                 style='color:#00ff13'></i>
                         </button>
                     </h2>
-                    <div id="collapseInterestsHobbies" class="accordion-collapse collapse show"
+                    <div id="collapseInterestsHobbies" class="accordion-collapse collapse hide"
                         data-bs-parent="#collapseInterestsHobbies">
                         <div class="accordion-body">
-                            <form class="row g-1 d-flex justify-content-center" id="interests-hobbies"
+                            <form class="row g-1 d-flex justify-content-center" data-index="5" id="interests-hobbies"
                                 autocomplete="off">
                                 <div class="form-floating col-md-6 mb-3 fs-6">
                                     <input type="text" class="form-control field" name="interests hobbies"
@@ -450,27 +509,32 @@
                 <!-- Accordion Item (Additional Information) -->
                 <div class="accordion-item">
                     <h2 class="accordion-header fs-2">
-                        <button id="additional-info-btn" class="accordion-button" type="button"
+                        <button disabled="true" id="additional-info-btn" class="accordion-button" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseAdditionalInfo" aria-expanded="true"
                             aria-controls="collapseAdditionalInfo">
-                            <i id="icon" class='bx bxs-file bx-tada px-2 fs-3'></i>
-                            <span class="fs-6">Additional Information</span>
+                            <i class='bx bxs-file bx-tada icon px-2 fs-3'></i>
+                            <span class="title">Additional Information</span>
                             <i id="additional-info-complete" class='bx bxs-badge-check bx-burst complete px-2 fs-2'
                                 style='color:#00ff13'></i>
                         </button>
                     </h2>
-                    <div id="collapseAdditionalInfo" class="accordion-collapse collapse show"
+                    <div id="collapseAdditionalInfo" class="accordion-collapse collapse hide"
                         data-bs-parent="#collapseAdditionalInfo">
                         <div class="accordion-body">
-                            <form class="row g-1 d-flex justify-content-center" id="additional-info" autocomplete="off">
+                            <form class="row g-1 d-flex justify-content-center" data-index="6" id="additional-info"
+                                autocomplete="off">
                                 <div class="form-floating col-md-6 mb-3 fs-6">
-                                    <input type="text" class="form-control field" name="work environment"
-                                        id="workEnvironment" placeholder="">
+                                    <select class="form-select field" name="work environment" id="workEnvironment"
+                                        aria-label="Floating label select example">
+                                        <option value="select">Select</option>
+                                        <option value="10th">Work From Office</option>
+                                        <option value="12th">Work From Home</option>
+                                    </select>
                                     <label for="workEnvironment">Preferred Work Environment</label>
                                 </div>
                                 <div class="form-floating col-md-6 mb-3 fs-6">
-                                    <input type="text" class="form-control field" name="salary expectations" id="salary"
-                                        placeholder="">
+                                    <input type="number" class="form-control field" name="salary expectations"
+                                        id="salary" placeholder="">
                                     <label for="salary">Salary Expectations</label>
                                 </div>
                                 <div class="form-floating col-md-6 col-lg-3 mb-3 fs-6">
@@ -529,8 +593,28 @@
             <!-- Accordion -->
         </div>
         <div class="row p-2 rounded mx-1 mt-3 mb-3 d-flex justify-content-center gap-2" style="background: #fff;">
-            <button id="submit-btn" class="btn col-lg-3 col-md-5 col-sm-12" type="submit">Submit</button>
+            <button id="submit-btn" class="btn col-lg-3 col-md-5 col-sm-12" data-bs-toggle="modal"
+                data-bs-target="#modal" type="submit">Submit</button>
             <button id="clear-btn" class="btn col-lg-3 col-md-5 col-sm-12" type="reset">Clear</button>
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Career Development and Skill Assessment
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Main Container -->

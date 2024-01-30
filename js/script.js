@@ -72,20 +72,84 @@ const InputFieldValidation = (input) => {
             const multipleWordsRegex = /\s+/;
             const numberAndSymbolRegex = /[0-9!@#$%^&*(),.?":{}|<>_+=\-[\]\\';`~/]/;
 
-            if (!input.value.trim()) {
-                displayErrorMessage(input, `This field is required.`);
-            } else if (numberAndSymbolRegex.test(input.value.trim())) {
-                displayErrorMessage(input, `Numbers and symbols are not allowed.`);
-            } else if (input.id === 'firstName' || input.id === 'lastName') {
-                if (multipleWordsRegex.test(input.value.trim())) {
-                    displayErrorMessage(input, `Please enter a ${input.name}.`);
+            if (input.id === 'technicalSkills') {
+                let skillsList = document.getElementById('technicalSkillsList');
+                document.getElementById('addTechnicalSkillBtn').addEventListener('click', function () {
+                    let skill = input.value.trim();
+
+                    if (skill) {
+                        let span = document.createElement('span');
+                        span.textContent = skill;
+                        span.classList.add('badge', 'bg-secondary', 'me-2', 'p-1', 'mb-2');
+                        let closeButton = document.createElement('button');
+                        closeButton.type = 'button';
+                        closeButton.classList.add('btn-close');
+                        closeButton.setAttribute('aria-label', 'Close');
+                        closeButton.addEventListener('click', function () {
+                            span.remove();
+                        });
+
+                        span.appendChild(closeButton);
+
+                        skillsList.appendChild(span);
+                        input.value = '';
+                    }
+                });
+                let skillsCount = skillsList.childElementCount;
+
+                if (skillsCount === 0) {
+                    displayErrorMessage(input, `Please add at least one technical skill.`);
                 } else {
                     isValid = true;
                 }
-            } else {
-                isValid = true;
-            }
+            } else if (input.id === 'softSkills') {
+                let skillsList = document.getElementById('softSkillsList');
+                document.getElementById('addSoftSkillBtn').addEventListener('click', function () {
+                    let skill = input.value.trim();
 
+                    if (skill) {
+                        let span = document.createElement('span');
+                        span.textContent = skill;
+                        span.classList.add('badge', 'bg-secondary', 'me-2', 'p-1', 'mb-2');
+                        let closeButton = document.createElement('button');
+                        closeButton.type = 'button';
+                        closeButton.classList.add('btn-close');
+                        closeButton.setAttribute('aria-label', 'Close');
+                        closeButton.addEventListener('click', function () {
+                            span.remove();
+                        });
+
+                        span.appendChild(closeButton);
+
+                        skillsList.appendChild(span);
+                        input.value = '';
+                    }
+                });
+                let skillsCount = skillsList.childElementCount;
+
+                if (skillsCount === 0) {
+                    displayErrorMessage(input, `Please add at least one soft skill.`);
+                } else {
+                    isValid = true;
+                }
+
+            } else {
+                if (!input.value.trim()) {
+                    displayErrorMessage(input, `This field is required.`);
+                } else if (numberAndSymbolRegex.test(input.value.trim())) {
+                    displayErrorMessage(input, `Numbers and symbols are not allowed.`);
+                } else if (input.value.trim().length <= 2) {
+                    displayErrorMessage(input, `Please enter more than 2 characters.`);
+                } else if (input.id === 'firstName' || input.id === 'lastName') {
+                    if (multipleWordsRegex.test(input.value.trim())) {
+                        displayErrorMessage(input, `Please enter a ${input.name}.`);
+                    } else {
+                        isValid = true;
+                    }
+                } else {
+                    isValid = true;
+                }
+            }
             break;
         case 'email':
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -201,10 +265,22 @@ saveButtons.forEach((btn) => {
         input.addEventListener('change', () => {
             InputFieldValidation(input);
         });
+        input.addEventListener('focus', () => {
+            InputFieldValidation(input);
+        });
+        input.addEventListener('input', () => {
+            InputFieldValidation(input);
+        });
     });
 
     selects.forEach((select) => {
-        select.addEventListener('change', () => {
+        select.addEventListener('input', () => {
+            InputFieldValidation(select);
+        });
+        select.addEventListener('focus', () => {
+            InputFieldValidation(select);
+        });
+        select.addEventListener('input', () => {
             selectFieldValidation(select);
         });
     });
@@ -220,6 +296,8 @@ saveButtons.forEach((btn) => {
         let form = document.querySelector(`#${container}`);
         let inputs = form.querySelectorAll('input');
         let selects = form.querySelectorAll('select');
+        let accordions = document.querySelectorAll('.accordion-collapse');
+        let indicator = document.querySelector('.indicator');
 
         inputs.forEach((input) => {
             isInputsValid = InputFieldValidation(input);
@@ -243,6 +321,15 @@ saveButtons.forEach((btn) => {
             let complete = document.querySelector(`#${container}-complete`);
             let accordionBtn = document.querySelector(`#${container}-btn`);
             accordionBtn.click();
+            let index = form.getAttribute('data-index');
+            if (+index === 6) {
+                accordions[+index].classList.add('show');
+                accordions[+index].classList.remove('hide');
+            } else {
+                indicator.style.width = `${((+index + 1) / (7 - 1)) * 100}%`;
+                accordions[+index + 1].classList.remove('hide');
+                accordions[+index + 1].classList.add('show');
+            }
             complete.classList.add('d-flex');
             btn.nextElementSibling.disabled = true;
         }
@@ -273,10 +360,11 @@ let clearBtn = document.querySelector('#clear-btn');
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    let modalBody = document.querySelector('.modal-body');
     if ((localStorage.getItem('validSectionCount')) == 7) {
-        alert('Submit Success');
+        modalBody.innerHTML = 'Form Submitted Successfully';
     } else {
-        alert('Form Is Not Filled');
+        modalBody.innerHTML = 'Form Is Not Fulfilled';
     }
 });
 
@@ -284,4 +372,3 @@ clearBtn.addEventListener('click', (e) => {
     e.preventDefault();
     location.reload();
 });
-

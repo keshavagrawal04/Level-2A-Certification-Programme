@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
+/* Global Styling */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Poppins';
     font-weight: bold;
     box-sizing: border-box;
-    transition: all .6s ease-in-out;
+    transition: background .6s ease-in-out;
 }
 
+/* root Color Variables Define */
 :root {
-    --background-color: #333;
-    --foreground-color: #333;
+    --background-color: 51, 51, 51;
+    --foreground-color: 51, 51, 51;
 }
 
-.color-buttons {
+/* Color Button And Progress Track Icons */
+.color-buttons,
+.progress-track {
     display: flex;
     justify-content: center;
+    text-shadow: 0 0 10px #333;
     align-items: center;
     height: 40px;
     width: 40px;
@@ -24,6 +29,59 @@
     margin: 2px;
     cursor: pointer;
     border: 1px solid #fff;
+    z-index: 1000;
+    color: rgb(var(--background-color));
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Animation For Progress Track */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.progress-track {
+    color: #fff;
+    background-color: rgb(var(--background-color)) !important;
+}
+
+.progress-track:hover {
+    animation: rotate 0.5s;
+}
+
+/* Styling For Custom Progress Bar */
+.custom-progress-bar {
+    position: absolute;
+    top: 48%;
+    left: 8%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px #fff !important;
+    border-radius: 5px;
+    width: 84%;
+}
+
+.indicator {
+    position: absolute;
+    margin-top: -1.5px;
+    top: 50%;
+    left: 0%;
+    border: 2px solid rgb(var(--background-color));
+    width: 0;
+    transition: width 4s;
+    border-radius: 5px;
+}
+
+.accordion-button {
+    cursor: pointer;
 }
 
 .complete {
@@ -34,18 +92,37 @@
 }
 
 .field {
-    border: 2px solid var(--background-color) !important;
-    color: var(--background-color) !important;
+    border: 2px solid rgb(var(--background-color)) !important;
+    color: rgb(var(--background-color)) !important;
     font-weight: bold !important;
 }
 
+.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#heading {
+    font-weight: bold;
+    text-shadow: 0 0 5px #fff;
+}
+
+@media (max-width: 320px) {
+    .title {
+        font-size: 14px;
+    }
+}
+
 .btn {
-    background-color: var(--background-color) !important;
+    background-color: rgb(var(--background-color)) !important;
     color: #fff !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
 }
 
 body {
-    background-color: var(--background-color) !important;
+    background-color: rgba(var(--background-color), 0.6) !important;
+    opacity: 1;
 }
 
 .error-message {
@@ -57,8 +134,12 @@ body {
 }
 
 label,
-#icon {
-    color: var(--background-color);
+.icon {
+    color: rgb(var(--background-color));
+}
+
+.icon {
+    text-shadow: 0 0 5px rgb(var(--background-color));
 }
 
 .error-input {
@@ -66,7 +147,7 @@ label,
 }
 
 .field:focus {
-    box-shadow: 0 0 10px var(--background-color) !important;
+    box-shadow: 0 0 10px rgb(var(--background-color)) !important;
 }
 
 .error-input:focus {
